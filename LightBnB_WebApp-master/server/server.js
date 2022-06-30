@@ -15,7 +15,7 @@ app.use(cookieSession({
   keys: ['key1']
 }));
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 // /api/endpoints
@@ -33,9 +33,6 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.get("/test", (req, res) => {
   res.send("🤗");
 });
-
-
-
 
 
 const port = process.env.PORT || 3000;

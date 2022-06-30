@@ -26,6 +26,7 @@ module.exports = function (router, database) {
   const login = function (email, password) {
     return database.getUserWithEmail(email)
       .then(user => {
+        // console.log(user)
         if (bcrypt.compareSync(password, user.password)) {
           return user;
         }
@@ -39,7 +40,7 @@ module.exports = function (router, database) {
     login(email, password)
       .then(user => {
         if (!user) {
-          console.log('user======',user)
+          console.log('user======', user)
           res.send({error: "error"});
           return;
         }
